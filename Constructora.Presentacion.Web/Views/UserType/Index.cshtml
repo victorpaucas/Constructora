@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Constructora | User Type";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="loader">
+    <img src="~/img/loading.gif" />
+</div>
+
+<div class="card border-info mt-3">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h5>Tipos de Usuarios</h5>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-primary btn-sm" id="btncreate" name="btncreate"><span class="fa fa-plus"></span> Crear Tipo Usuario</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive-sm">
+            <table class="table table-sm table-striped border-bottom border-left border-right" id="tbllist" name="tbllist">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center" colspan="3">No hay tipos de usuarios.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="maintenance" tabindex="-1" role="dialog" aria-labelledby="maintenanceTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success">
+                <h5 class="modal-title text-light" id="maintenanceTitle">Tipo de Usuario</h5>
+                <button type="button" class="close button-bar" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="fa fa-times text-light"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="txtusertypeid" name="txtusertypeid" type="hidden" value="0" />
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label id="lblname" class="text-truncate font-sm">Nombre:</label>
+                        <input id="txtname" type="text" class="form-control form-control-sm" placeholder="Ingresar nombre" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+                    <button id="btnsave" type="button" class="btn btn-sm btn-primary">
+                        <span class="fa fa-save"></span>&nbsp;&nbsp;Guardar
+                    </button>
+                </div>
+                <div>
+                    <button id="btnclose" type="button" class="btn btn-sm btn-outline-danger" data-dismiss="modal">
+                        <span class="fa fa-times"></span>&nbsp;&nbsp;Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/data/usertype/usertype.js"></script>
+}

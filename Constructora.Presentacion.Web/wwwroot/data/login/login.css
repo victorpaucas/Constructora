@@ -1,0 +1,6 @@
+﻿body {
+    background: url(../../../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-clip: border-box;
+}

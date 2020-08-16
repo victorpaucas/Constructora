@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="icon" href="~/img/constructora.ico" />
+    <link rel="stylesheet" href="~/lib/scrollbar/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="~/lib/chart/css/coreui-chartjs.css" />
+    <link rel="stylesheet" href="~/lib/core/css/coreui.css" />
+    <link rel="stylesheet" href="~/lib/main/css/style.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/sweetalert/css/sweetalert2.css" />
+    <link rel="stylesheet" href="~/lib/constructora/css/constructora.css" />
+
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div class="c-sidebar bg-success c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+        <div class="c-sidebar-brand d-md-down-none bg-success">
+            <div class="c-sidebar-brand-full" style="height: 46px;">
+                <img src="~/img/constructora.png" class="rounded mx-auto d-block" style="height: 46px;" />
+            </div>
+            <div class="c-sidebar-brand-minimized" style="height: 46px;">
+                <img src="~/img/constructora.png" class="rounded mx-auto d-block" style="height: 46px;" />
+            </div>
+        </div>
+        <ul class="c-sidebar-nav ps ps--active-y">
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link c-active" href="/Home"><span class="c-sidebar-nav-icon fa fa-tachometer-alt"></span>Tablero</a>
+            </li>
+            <li class="c-sidebar-nav-dropdown">
+                <a class="c-sidebar-nav-dropdown-toggle" href="#"><span class="c-sidebar-nav-icon fa fa-building"></span>Almacenamiento</a>
+                <ul class="c-sidebar-nav-dropdown-items">
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/File">Archivo</a></li>
+                </ul>
+            </li>
+            <li class="c-sidebar-nav-dropdown">
+                <a class="c-sidebar-nav-dropdown-toggle" href="#"><span class="c-sidebar-nav-icon fa fa-lock"></span>Seguridad</a>
+                <ul class="c-sidebar-nav-dropdown-items">
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/User">Usuario</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/UserType">Tipo</a></li>
+                </ul>
+            </li>
+            <li class="c-sidebar-nav-item">
+                <a id="btnlogout" name="btnlogout" class="c-sidebar-nav-link bg-gradient-danger" href="#"><span class="c-sidebar-nav-icon fas fa-sign-out-alt"></span>Cerrar Sesión</a>
+            </li>
+        </ul>
+    </div>
+    <div class="c-wrapper">
+        <header class="c-header bg-success c-header-fixed text-light">
+            <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto button-bar" type="button" data-target="#sidebar" data-class="c-sidebar-show" style="height: 56px;">
+                <span class="fa fa-bars text-light"></span>
+            </button>
+            <a class="c-header-brand d-lg-none c-header-brand-sm-up-center mr-3" href="#">
+                <img src="~/img/constructora.png" class="rounded mx-auto d-block" style="height: 46px;" />
+            </a>
+            <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none button-bar" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" style="height: 56px;">
+                <span class="fa fa-bars text-light"></span>
+            </button>
+            <div class="c-subheader bg-success justify-content-between px-3 text-light">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderBreadcrumb" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </header>
+        <div class="c-body">
+            <main class="c-main pt-3">
+                <div class="container-fluid pl-3 pr-3">
+                    <div id="ui-view">
+                        <div>
+                            <div class="fade-in">
+                                @RenderBody()
+                                <hr />
+                                <footer>
+                                    <p>&copy; 2020 - Constructora</p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/js/jquery-3.4.1.min.js"></script>
+    <script src="~/lib/jquery/js/jquery.validate.min.js"></script>
+    <script src="~/lib/core/js/coreui.bundle.js"></script>
+    <script src="~/lib/core/js/coreui-utilities.js"></script>
+    <script src="~/lib/core/js/coreui-utils.js"></script>
+    <script src="~/lib/chart/js/coreui-chartjs.bundle.js"></script>
+    <script src="~/lib/fontawesome/js/all.min.js"></script>
+    <script src="~/lib/sweetalert/js/sweetalert2.min.js"></script>
+    <script src="~/lib/constructora/js/constructora.js"></script>
+    <script src="~/data/shared/layout.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
